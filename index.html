@@ -44,6 +44,7 @@ body{
     height:75px;
     display:flex;
     align-items:center;
+    border-radius: 15px;
 }
 
 .nav-container{
@@ -514,6 +515,35 @@ body{
 }
 
 
+/* ================= PRODUCT SEARCH ================= */
+
+.product-search{
+    background:linear-gradient(135deg,#ffffff,#f8f8ff);
+    border:1px solid var(--border);
+    border-radius:22px;
+    padding:20px;
+    margin-bottom:24px;
+    box-shadow:0 10px 30px rgba(20,9,199,.07);
+}
+
+.search-title{display:flex;align-items:center;gap:12px;margin-bottom:15px;}
+.search-icon{width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,var(--blue),var(--blue-light));color:white;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:bold;box-shadow:0 8px 18px rgba(20,9,199,.18);}
+.search-title strong{display:block;font-size:18px;margin-bottom:3px;}
+.search-title small{color:var(--gray);font-size:13px;}
+.search-box{position:relative;display:flex;align-items:center;background:white;border:2px solid #e0e1f2;border-radius:16px;min-height:58px;transition:.25s;}
+.search-box:focus-within{border-color:var(--blue);box-shadow:0 0 0 4px rgba(20,9,199,.08);}
+.search-box-icon{font-size:21px;margin-right:17px;pointer-events:none;}
+.search-box input{width:100%;height:54px;border:none;outline:none;background:transparent;color:var(--black);font-size:17px;font-weight:600;padding:0 12px;direction:rtl;}
+.search-box input::placeholder{color:#a0a1ad;font-weight:normal;}
+.clear-search{display:none;border:none;background:#f1f2f7;color:#666675;width:34px;height:34px;border-radius:10px;margin-left:10px;margin-right:5px;cursor:pointer;font-size:14px;transition:.2s;}
+.clear-search:hover{background:#e4e5ee;color:var(--red);}
+.clear-search.show{display:block;}
+.search-result-message{min-height:22px;margin-top:10px;color:var(--gray);font-size:13px;text-align:center;}
+.search-result-message.success{color:var(--green);font-weight:bold;}
+.search-result-message.error{color:var(--red);font-weight:bold;}
+.product-card.search-highlight{animation:searchHighlight .5s ease;}
+@keyframes searchHighlight{0%{transform:scale(.98);box-shadow:0 0 0 0 rgba(20,9,199,.35);}60%{transform:scale(1.02);box-shadow:0 0 0 7px rgba(20,9,199,.10);}100%{transform:scale(1);}}
+
 /* ================= RESPONSIVE ================= */
 
 @media(max-width:1000px){
@@ -669,6 +699,25 @@ body{
             <span id="productsCount">0</span> منتج
         </div>
 
+    </div>
+
+    <!-- ================= SEARCH BY PRODUCT CODE ================= -->
+    <div class="product-search">
+        <div class="search-title">
+            <span class="search-icon">⌕</span>
+            <div>
+                <strong>ابحث عن المنتج بالكود</strong>
+                <small>اكتب كود الصنف للوصول للمنتج بسرعة</small>
+            </div>
+        </div>
+
+        <div class="search-box">
+            <span class="search-box-icon">🔎</span>
+            <input type="text" id="productSearch" inputmode="numeric" autocomplete="off" placeholder="اكتب كود الصنف هنا..." aria-label="البحث عن المنتج بالكود">
+            <button type="button" id="clearSearch" class="clear-search" aria-label="مسح البحث">✕</button>
+        </div>
+
+        <div class="search-result-message" id="searchResultMessage"></div>
     </div>
 
     <div class="products-grid" id="productsGrid"></div>
@@ -863,6 +912,10 @@ const whatsappOrder = document.getElementById("whatsappOrder");
 
 const toast = document.getElementById("toast");
 
+const productSearch = document.getElementById("productSearch");
+const clearSearch = document.getElementById("clearSearch");
+const searchResultMessage = document.getElementById("searchResultMessage");
+
 
 /* =========================================================
    السلة
@@ -875,17 +928,21 @@ let cart = JSON.parse(localStorage.getItem("bashandyCart")) || [];
    عرض المنتجات
 ========================================================= */
 
-function renderProducts(){
+function renderProducts(list = products, highlightId = null){
 
     productsGrid.innerHTML = "";
 
-    productsCount.textContent = products.length;
+    productsCount.textContent = list.length;
 
-    products.forEach(product => {
+    list.forEach(product => {
 
         const card = document.createElement("div");
 
         card.className = "product-card";
+
+        if(String(product.id) === String(highlightId)){
+            card.classList.add("search-highlight");
+        }
 
         card.innerHTML = `
 
@@ -924,6 +981,54 @@ function renderProducts(){
 
 }
 
+
+/* =========================================================
+   البحث عن المنتج بالكود
+========================================================= */
+
+function searchProductByCode(){
+
+    const code = productSearch.value.trim();
+
+    if(code === ""){
+        renderProducts();
+        clearSearch.classList.remove("show");
+        searchResultMessage.textContent = "";
+        searchResultMessage.className = "search-result-message";
+        return;
+    }
+
+    clearSearch.classList.add("show");
+
+    const foundProducts = products.filter(product =>
+        String(product.id).startsWith(code)
+    );
+
+    if(foundProducts.length > 0){
+        renderProducts(foundProducts);
+
+        if(foundProducts.length === 1){
+            searchResultMessage.textContent = `✓ تم العثور على المنتج: ${foundProducts[0].name}`;
+            searchResultMessage.className = "search-result-message success";
+        }else{
+            searchResultMessage.textContent = `تم العثور على ${foundProducts.length} منتجات مطابقة للكود`;
+            searchResultMessage.className = "search-result-message success";
+        }
+    }else{
+        productsGrid.innerHTML = "";
+        productsCount.textContent = "0";
+        searchResultMessage.textContent = "❌ مفيش منتج بالكود ده، تأكد من كود الصنف";
+        searchResultMessage.className = "search-result-message error";
+    }
+}
+
+productSearch.addEventListener("input", searchProductByCode);
+
+clearSearch.addEventListener("click", () => {
+    productSearch.value = "";
+    searchProductByCode();
+    productSearch.focus();
+});
 
 /* =========================================================
    إضافة للسلة
