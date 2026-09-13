@@ -471,6 +471,253 @@ body{
     color:white;
 }
 
+/* ================= INVOICE ================= */
+.invoice-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(5,8,30,.62);
+    backdrop-filter:blur(6px);
+    z-index:4000;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    opacity:0;
+    visibility:hidden;
+    transition:.25s;
+}
+
+.invoice-overlay.active{
+    opacity:1;
+    visibility:visible;
+}
+
+.invoice-card{
+    width:min(620px,100%);
+    max-height:92vh;
+    overflow-y:auto;
+    background:#fff;
+    border-radius:24px;
+    box-shadow:0 25px 80px rgba(0,0,0,.25);
+    transform:translateY(20px) scale(.98);
+    transition:.25s;
+}
+
+.invoice-overlay.active .invoice-card{
+    transform:translateY(0) scale(1);
+}
+
+.invoice-header{
+    background:linear-gradient(135deg,var(--blue-dark),var(--blue-light));
+    color:white;
+    padding:24px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+}
+
+.invoice-brand strong{
+    display:block;
+    font-size:25px;
+    margin-bottom:5px;
+}
+
+.invoice-brand span{
+    opacity:.9;
+    font-size:13px;
+}
+
+.close-invoice{
+    width:42px;
+    height:42px;
+    border:none;
+    border-radius:12px;
+    background:rgba(255,255,255,.16);
+    color:white;
+    font-size:21px;
+    cursor:pointer;
+}
+
+.invoice-body{
+    padding:24px;
+}
+
+.invoice-meta{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-bottom:22px;
+}
+
+.invoice-meta-box{
+    background:#f7f8ff;
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:12px 14px;
+}
+
+.invoice-meta-box small{
+    display:block;
+    color:var(--gray);
+    font-size:12px;
+    margin-bottom:5px;
+}
+
+.invoice-meta-box strong{
+    font-size:14px;
+}
+
+.invoice-table{
+    border:1px solid var(--border);
+    border-radius:16px;
+    overflow:hidden;
+}
+
+.invoice-table-head,
+.invoice-row{
+    display:grid;
+    grid-template-columns:1fr 70px 100px 105px;
+    gap:8px;
+    align-items:center;
+    padding:13px 14px;
+}
+
+.invoice-table-head{
+    background:#f1f3ff;
+    color:var(--gray);
+    font-size:12px;
+    font-weight:bold;
+}
+
+.invoice-row{
+    border-top:1px solid var(--border);
+    font-size:13px;
+}
+
+.invoice-product-name{
+    font-weight:800;
+    line-height:1.5;
+}
+
+.invoice-product-code{
+    display:block;
+    color:var(--gray);
+    font-size:11px;
+    margin-top:3px;
+}
+
+.invoice-number,
+.invoice-quantity,
+.invoice-unit-price,
+.invoice-line-total{
+    text-align:center;
+}
+
+.invoice-line-total{
+    font-weight:900;
+    color:var(--blue);
+}
+
+.invoice-total-box{
+    margin-top:18px;
+    padding:18px;
+    border-radius:16px;
+    background:linear-gradient(135deg,#f2f3ff,#fff);
+    border:1px solid var(--border);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+}
+
+.invoice-total-box span{
+    color:var(--gray);
+    font-weight:bold;
+}
+
+.invoice-total-box strong{
+    color:var(--blue);
+    font-size:25px;
+}
+
+.invoice-note{
+    margin-top:15px;
+    padding:12px 14px;
+    border-radius:12px;
+    background:#fff8e7;
+    color:#805b00;
+    font-size:12px;
+    line-height:1.7;
+}
+
+.invoice-actions{
+    display:grid;
+    grid-template-columns:1fr 1.5fr;
+    gap:10px;
+    margin-top:20px;
+}
+
+.invoice-pdf{
+    border:none;
+    padding:14px;
+    border-radius:13px;
+    font-weight:bold;
+    cursor:pointer;
+    background:#198754;
+    color:white;
+}
+
+.invoice-pdf:hover{
+    filter:brightness(.93);
+}
+
+.invoice-back,
+.invoice-whatsapp{
+    border:none;
+    padding:14px;
+    border-radius:13px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.invoice-back{
+    background:#f1f2f7;
+    color:var(--black);
+}
+
+.invoice-whatsapp{
+    background:#25D366;
+    color:white;
+}
+
+@media(max-width:600px){
+    .invoice-body{
+        padding:16px;
+    }
+
+    .invoice-header{
+        padding:20px 16px;
+    }
+
+    .invoice-table{
+        overflow-x:auto;
+    }
+
+    .invoice-table-head,
+    .invoice-row{
+        min-width:500px;
+    }
+
+    .invoice-meta{
+        grid-template-columns:1fr;
+    }
+
+    .invoice-actions{
+        grid-template-columns:1fr;
+    }
+}
+
 /* ================= TOAST ================= */
 
 .toast{
@@ -635,6 +882,40 @@ body{
     letter-spacing:.3px;
 }
 
+@media print{
+    body > *:not(#invoiceOverlay){
+        display:none !important;
+    }
+
+    #invoiceOverlay{
+        position:static !important;
+        inset:auto !important;
+        display:block !important;
+        background:#fff !important;
+        padding:0 !important;
+        overflow:visible !important;
+    }
+
+    #invoiceOverlay .invoice-card{
+        width:100% !important;
+        max-width:none !important;
+        margin:0 !important;
+        box-shadow:none !important;
+        border:0 !important;
+    }
+
+    #invoiceOverlay .invoice-actions,
+    #invoiceOverlay .invoice-note,
+    #invoiceOverlay .close-invoice{
+        display:none !important;
+    }
+
+    #invoiceOverlay .invoice-header{
+        -webkit-print-color-adjust:exact !important;
+        print-color-adjust:exact !important;
+    }
+}
+
 </style>
 </head>
 
@@ -774,7 +1055,7 @@ body{
             </button>
 
             <button class="whatsapp-btn" id="whatsappOrder">
-                واتساب
+                تأكيد الطلب 🧾
             </button>
 
         </div>
@@ -783,6 +1064,57 @@ body{
 
 </aside>
 
+
+<!-- ================= INVOICE ================= -->
+<div class="invoice-overlay" id="invoiceOverlay">
+    <div class="invoice-card">
+        <div class="invoice-header">
+            <div class="invoice-brand">
+                <strong>🧾 البشندي</strong>
+                <span>فاتورة طلب إلكترونية</span>
+            </div>
+            <button class="close-invoice" id="closeInvoice">✕</button>
+        </div>
+
+        <div class="invoice-body">
+            <div class="invoice-meta">
+                <div class="invoice-meta-box">
+                    <small>رقم الطلب</small>
+                    <strong id="invoiceOrderNumber">-</strong>
+                </div>
+                <div class="invoice-meta-box">
+                    <small>التاريخ والوقت</small>
+                    <strong id="invoiceDate">-</strong>
+                </div>
+            </div>
+
+            <div class="invoice-table">
+                <div class="invoice-table-head">
+                    <div>المنتج</div>
+                    <div class="invoice-quantity">الكمية</div>
+                    <div class="invoice-unit-price">سعر الوحدة</div>
+                    <div class="invoice-line-total">الإجمالي</div>
+                </div>
+                <div id="invoiceItems"></div>
+            </div>
+
+            <div class="invoice-total-box">
+                <span>إجمالي الطلب</span>
+                <strong><span id="invoiceTotal">0</span> جنيه</strong>
+            </div>
+
+            <div class="invoice-note">
+                راجع الأصناف والكميات والأسعار. يمكنك حفظ الفاتورة كملف PDF من زر «تحميل الفاتورة PDF»، أو إرسال تفاصيل الطلب عبر واتساب.
+            </div>
+
+            <div class="invoice-actions">
+                <button class="invoice-back" id="invoiceBack">العودة للسلة</button>
+                <button class="invoice-pdf" id="printInvoice">🧾 تحميل الفاتورة PDF</button>
+                <button class="invoice-whatsapp" id="sendInvoiceWhatsApp">🟢 تأكيد وإرسال عبر واتساب</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- ================= TOAST ================= -->
 
@@ -911,6 +1243,23 @@ const clearCart = document.getElementById("clearCart");
 const whatsappOrder = document.getElementById("whatsappOrder");
 
 const toast = document.getElementById("toast");
+
+const invoiceOverlay = document.getElementById("invoiceOverlay");
+const closeInvoice = document.getElementById("closeInvoice");
+const invoiceBack = document.getElementById("invoiceBack");
+const printInvoice = document.getElementById("printInvoice");
+
+if (printInvoice) {
+    printInvoice.addEventListener("click", function () {
+        window.print();
+    });
+}
+
+const sendInvoiceWhatsApp = document.getElementById("sendInvoiceWhatsApp");
+const invoiceItems = document.getElementById("invoiceItems");
+const invoiceTotal = document.getElementById("invoiceTotal");
+const invoiceOrderNumber = document.getElementById("invoiceOrderNumber");
+const invoiceDate = document.getElementById("invoiceDate");
 
 const productSearch = document.getElementById("productSearch");
 const clearSearch = document.getElementById("clearSearch");
@@ -1264,47 +1613,131 @@ clearCart.addEventListener("click", () => {
 
 
 /* =========================================================
-   طلب واتساب
+   الفاتورة
 ========================================================= */
 
-whatsappOrder.addEventListener("click", () => {
+let currentOrderNumber = "";
 
+function generateOrderNumber(){
+    const now = Date.now().toString().slice(-6);
+    return `BS-${now}`;
+}
+
+function formatDateTime(){
+    const now = new Date();
+    return now.toLocaleString("ar-EG", {
+        dateStyle:"medium",
+        timeStyle:"short"
+    });
+}
+
+function openInvoice(){
     if(cart.length === 0){
-
         showToast("السلة فارغة");
-
         return;
-
     }
 
-    let message = "🛒 طلب جديد من متجر البشندي\n\n";
+    currentOrderNumber = generateOrderNumber();
 
-    cart.forEach(item => {
+    invoiceOrderNumber.textContent = currentOrderNumber;
+    invoiceDate.textContent = formatDateTime();
 
-        message +=
-        `• ${item.name}\n` +
-        `كود الصنف: ${item.id}\n` +
-        `الكمية: ${item.quantity}\n` +
-        `السعر: ${item.price * item.quantity} جنيه\n\n`;
+    invoiceItems.innerHTML = "";
 
+    cart.forEach((item,index) => {
+        const row = document.createElement("div");
+        row.className = "invoice-row";
+
+        row.innerHTML = `
+            <div class="invoice-product-name">
+                ${item.name}
+                <span class="invoice-product-code">كود: ${item.id}</span>
+            </div>
+            <div class="invoice-quantity">${item.quantity}</div>
+            <div class="invoice-unit-price">${item.price.toLocaleString("ar-EG")} ج</div>
+            <div class="invoice-line-total">${(item.price * item.quantity).toLocaleString("ar-EG")} ج</div>
+        `;
+
+        invoiceItems.appendChild(row);
     });
 
     const total = cart.reduce(
-        (sum,item) =>
-        sum + item.price * item.quantity,
+        (sum,item) => sum + item.price * item.quantity,
+        0
+    );
+
+    invoiceTotal.textContent = total.toLocaleString("ar-EG");
+    invoiceOverlay.classList.add("active");
+}
+
+function closeInvoiceModal(){
+    invoiceOverlay.classList.remove("active");
+}
+
+/* =========================================================
+   إرسال الفاتورة عبر واتساب
+========================================================= */
+
+function sendOrderToWhatsApp(){
+    if(cart.length === 0){
+        showToast("السلة فارغة");
+        closeInvoiceModal();
+        return;
+    }
+
+    const orderNumber = currentOrderNumber || generateOrderNumber();
+    const date = invoiceDate.textContent || formatDateTime();
+
+    let message =
+        `🧾 فاتورة طلب من البشندي\n` +
+        `━━━━━━━━━━━━━━\n` +
+        `🔢 رقم الطلب: ${orderNumber}\n` +
+        `📅 التاريخ: ${date}\n` +
+        `━━━━━━━━━━━━━━\n\n`;
+
+    cart.forEach((item,index) => {
+        const lineTotal = item.price * item.quantity;
+
+        message +=
+            `${index + 1}) ${item.name}\n` +
+            `كود الصنف: ${item.id}\n` +
+            `الكمية: ${item.quantity} × ${item.price} جنيه\n` +
+            `الإجمالي: ${lineTotal} جنيه\n\n`;
+    });
+
+    const total = cart.reduce(
+        (sum,item) => sum + item.price * item.quantity,
         0
     );
 
     message +=
-        `💰 الإجمالي: ${total} جنيه\n\n` +
-        `📍 مول البشندي - مدينة موط - الوادي الجديد`;
+        `━━━━━━━━━━━━━━\n` +
+        `💰 إجمالي الطلب: ${total} جنيه\n\n` +
+        `📍 مول البشندي - مدينة موط - الوادي الجديد\n` +
+        `🙏 شكرًا لاختياركم البشندي`;
 
     const url =
         `https://wa.me/${WHATSAPP_NUMBER}?text=` +
         encodeURIComponent(message);
 
     window.open(url,"_blank");
+}
 
+whatsappOrder.addEventListener("click", openInvoice);
+closeInvoice.addEventListener("click", closeInvoiceModal);
+invoiceBack.addEventListener("click", closeInvoiceModal);
+sendInvoiceWhatsApp.addEventListener("click", sendOrderToWhatsApp);
+
+invoiceOverlay.addEventListener("click", (event) => {
+    if(event.target === invoiceOverlay){
+        closeInvoiceModal();
+    }
+});
+
+document.addEventListener("keydown", (event) => {
+    if(event.key === "Escape"){
+        closeInvoiceModal();
+    }
 });
 
 
