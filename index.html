@@ -922,12 +922,15 @@ body{
     position:fixed;
     inset:0;
     z-index:99999;
-    min-height:100vh;
-    overflow:auto;
+    width:100%;
+    height:100%;
+    height:100dvh;
+    overflow:hidden;
     display:none;
     align-items:center;
     justify-content:center;
-    padding:30px 18px;
+    padding:18px;
+    isolation:isolate;
     background:
         radial-gradient(circle at 10% 10%, rgba(255,255,255,.10), transparent 28%),
         radial-gradient(circle at 90% 90%, rgba(255,255,255,.08), transparent 30%),
@@ -937,6 +940,8 @@ body{
 #maintenancePage.active{display:flex;}
 .maintenance-box{
     width:min(760px,100%);
+    max-height:calc(100dvh - 36px);
+    overflow-y:auto;
     text-align:center;
     background:rgba(255,255,255,.10);
     border:1px solid rgba(255,255,255,.22);
@@ -1047,11 +1052,95 @@ body{
     font-weight:700;
 }
 @media(max-width:520px){
-    #maintenancePage{padding:18px 12px;}
-    .maintenance-box{padding:28px 16px 20px;border-radius:24px;}
-    .maintenance-box p{font-size:15px;}
-    .maintenance-highlight{font-size:14px;}
-    .maintenance-phone{width:100%;}
+    #maintenancePage{
+        padding:10px;
+        height:100dvh;
+        min-height:100dvh;
+    }
+
+    .maintenance-box{
+        width:100%;
+        max-height:calc(100dvh - 20px);
+        padding:20px 14px 16px;
+        border-radius:22px;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+    }
+
+    .maintenance-logo{
+        width:78px;
+        max-height:65px;
+        margin-bottom:10px;
+    }
+
+    .maintenance-icon{
+        width:58px;
+        height:58px;
+        margin-bottom:10px;
+        border-radius:18px;
+        font-size:27px;
+    }
+
+    .maintenance-badge{
+        padding:7px 13px;
+        font-size:12px;
+        margin-bottom:10px;
+    }
+
+    .maintenance-box h1{
+        font-size:25px;
+        margin-bottom:8px;
+    }
+
+    .maintenance-box p{
+        font-size:14px;
+        line-height:1.7;
+    }
+
+    .maintenance-highlight{
+        width:100%;
+        margin:12px auto;
+        padding:11px 12px;
+        font-size:13px;
+        line-height:1.7;
+    }
+
+    .maintenance-contact-title{
+        margin-top:8px;
+        margin-bottom:8px;
+        font-size:13px;
+    }
+
+    .maintenance-phones{
+        width:100%;
+        gap:7px;
+    }
+
+    .maintenance-phone{
+        width:100%;
+        min-width:0;
+        padding:10px 12px;
+        font-size:13px;
+        border-radius:12px;
+    }
+
+    .maintenance-footer{
+        width:100%;
+        margin-top:12px;
+        padding-top:10px;
+        font-size:10px;
+        line-height:1.5;
+    }
+
+    .maintenance-footer strong{
+        font-size:14px;
+    }
+
+    .maintenance-footer span{
+        font-size:10px;
+    }
 }
 
 </style>
