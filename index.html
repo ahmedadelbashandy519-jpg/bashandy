@@ -179,6 +179,298 @@ body{
     font-size:13px;
 }
 
+
+/* ================= BRIDAL PACKAGES ================= */
+
+.packages-section{
+    width:min(1200px,94%);
+    margin:35px auto 55px;
+}
+
+.packages-heading{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:25px;
+    margin-bottom:24px;
+    padding:28px;
+    border-radius:24px;
+    background:linear-gradient(135deg,#ffffff,#f5f4ff);
+    border:1px solid var(--border);
+    box-shadow:0 12px 35px rgba(20,9,199,.07);
+}
+
+.packages-kicker{
+    display:inline-block;
+    margin-bottom:8px;
+    color:var(--blue);
+    font-size:13px;
+    font-weight:900;
+}
+
+.packages-heading h2{
+    font-size:clamp(25px,4vw,34px);
+    margin-bottom:8px;
+}
+
+.packages-heading p{
+    color:var(--gray);
+    line-height:1.8;
+    max-width:760px;
+}
+
+.packages-badge{
+    flex:0 0 125px;
+    width:125px;
+    height:125px;
+    border-radius:50%;
+    background:linear-gradient(135deg,var(--blue-dark),var(--blue-light));
+    color:#fff;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    box-shadow:0 18px 35px rgba(20,9,199,.22);
+}
+
+.packages-badge strong{
+    font-size:28px;
+    line-height:1;
+    margin-bottom:6px;
+}
+
+.packages-badge span{
+    font-size:11px;
+    line-height:1.4;
+    padding:0 12px;
+}
+
+.packages-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.package-card{
+    position:relative;
+    overflow:hidden;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:24px;
+    padding:24px;
+    box-shadow:0 10px 30px rgba(20,9,199,.07);
+    transition:.25s;
+}
+
+.package-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 18px 42px rgba(20,9,199,.13);
+    border-color:#d5d2ff;
+}
+
+.package-featured{
+    border:2px solid #cfcaff;
+    box-shadow:0 15px 40px rgba(20,9,199,.12);
+}
+
+.package-premium{
+    background:linear-gradient(180deg,#fff,#faf9ff);
+}
+
+.package-ribbon{
+    position:absolute;
+    top:16px;
+    left:-34px;
+    transform:rotate(-45deg);
+    width:135px;
+    padding:6px 0;
+    text-align:center;
+    background:var(--blue);
+    color:#fff;
+    font-size:11px;
+    font-weight:900;
+}
+
+.package-top{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    margin-bottom:15px;
+}
+
+.package-label{
+    color:var(--gray);
+    font-size:12px;
+    font-weight:800;
+}
+
+.package-icon{
+    width:44px;
+    height:44px;
+    border-radius:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#eef0ff;
+    font-size:23px;
+}
+
+.package-card h3{
+    font-size:22px;
+    line-height:1.5;
+    margin-bottom:8px;
+}
+
+.package-price{
+    color:var(--blue);
+    font-size:29px;
+    font-weight:900;
+    margin-bottom:13px;
+}
+
+.package-price span{
+    font-size:14px;
+    color:var(--gray);
+    font-weight:700;
+}
+
+.package-description{
+    color:var(--gray);
+    line-height:1.8;
+    font-size:14px;
+    min-height:76px;
+    margin-bottom:15px;
+}
+
+.package-features{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:9px;
+    margin-bottom:18px;
+}
+
+.package-features li{
+    font-size:13px;
+    line-height:1.65;
+    color:var(--black);
+    font-weight:600;
+}
+
+.package-note{
+    padding:13px 14px;
+    border-radius:15px;
+    background:#f6f7ff;
+    border:1px solid var(--border);
+    margin-bottom:16px;
+}
+
+.package-note strong{
+    display:block;
+    color:var(--blue);
+    margin-bottom:4px;
+    font-size:13px;
+}
+
+.package-note span{
+    color:var(--gray);
+    font-size:12px;
+    line-height:1.7;
+}
+
+.package-btn{
+    width:100%;
+    border:none;
+    background:linear-gradient(135deg,var(--blue),var(--blue-light));
+    color:#fff;
+    padding:14px;
+    border-radius:14px;
+    cursor:pointer;
+    font-weight:900;
+    font-size:14px;
+    transition:.2s;
+}
+
+.package-btn:hover{
+    filter:brightness(.95);
+    transform:translateY(-2px);
+}
+
+.package-bottom-note{
+    margin-top:18px;
+    padding:16px 18px;
+    border-radius:17px;
+    background:#fff8e7;
+    border:1px solid #f2dfaa;
+    color:#6d5200;
+    text-align:center;
+    line-height:1.8;
+}
+
+.package-bottom-note strong{
+    display:block;
+    margin-bottom:3px;
+}
+
+.package-bottom-note span{
+    font-size:13px;
+}
+
+@media(max-width:900px){
+    .packages-grid{
+        grid-template-columns:1fr;
+    }
+
+    .package-description{
+        min-height:0;
+    }
+}
+
+@media(max-width:600px){
+    .packages-section{
+        width:min(94%,560px);
+        margin-top:25px;
+    }
+
+    .packages-heading{
+        flex-direction:column;
+        align-items:stretch;
+        text-align:center;
+        padding:20px 16px;
+    }
+
+    .packages-badge{
+        width:100px;
+        height:100px;
+        flex-basis:100px;
+        margin:0 auto;
+    }
+
+    .packages-badge strong{
+        font-size:23px;
+    }
+
+    .packages-grid{
+        gap:13px;
+    }
+
+    .package-card{
+        padding:18px;
+        border-radius:20px;
+    }
+
+    .package-card h3{
+        font-size:20px;
+    }
+
+    .package-price{
+        font-size:25px;
+    }
+}
+
+
 /* ================= PRODUCTS ================= */
 
 .products-section{
@@ -471,6 +763,78 @@ body{
     color:white;
 }
 
+
+/* ================= DELIVERY / PAYMENT / SAVINGS ================= */
+.package-saving{
+    margin:4px 0 12px;
+    padding:8px 11px;
+    border-radius:12px;
+    background:#fff7df;
+    border:1px solid #f0d58d;
+    color:#765600;
+    font-size:12px;
+    font-weight:900;
+    line-height:1.5;
+}
+.invoice-delivery-section,.invoice-payment-box{
+    margin-top:18px;padding:18px;border-radius:18px;
+    background:#f8f9ff;border:1px solid var(--border);
+}
+.invoice-section-title{
+    display:flex;justify-content:space-between;gap:12px;
+    margin-bottom:15px;
+}
+.invoice-section-title span{color:var(--blue);font-weight:900;font-size:16px}
+.invoice-section-title small{color:var(--gray);font-size:11px}
+.delivery-form-grid{display:grid;grid-template-columns:1fr 1.35fr;gap:14px}
+.delivery-field{display:flex;flex-direction:column;gap:7px}
+.delivery-field label{font-size:12px;font-weight:900}
+.delivery-field select,.delivery-field textarea{
+    width:100%;border:1px solid #dfe2f2;border-radius:13px;
+    background:#fff;padding:12px;font:inherit;outline:none;
+}
+.delivery-field select:focus,.delivery-field textarea:focus{
+    border-color:var(--blue);box-shadow:0 0 0 3px rgba(20,9,199,.08);
+}
+.delivery-field textarea{resize:vertical;min-height:82px}
+.delivery-summary{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.delivery-summary>div{
+    padding:12px 14px;border-radius:13px;background:#fff;
+    border:1px solid #e4e6f2;display:flex;justify-content:space-between;gap:10px;
+}
+.delivery-summary span{color:var(--gray);font-size:12px}
+.delivery-summary strong{font-size:14px}
+.delivery-grand-total{
+    grid-column:1/-1!important;background:#eef0ff!important;
+    border-color:#d3d5ff!important;
+}
+.delivery-grand-total span,.delivery-grand-total strong{color:var(--blue);font-weight:900}
+.delivery-grand-total strong{font-size:19px}
+.payment-number{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:14px;border-radius:14px;background:#fff;border:1px solid #dfe2f2;
+}
+.payment-number span{color:var(--gray);font-size:12px}
+.payment-number strong{direction:ltr;color:var(--blue);font-size:21px}
+.payment-name{margin-top:9px;color:var(--gray);font-size:12px}
+.payment-name strong{color:var(--black)}
+.payment-warning{
+    margin-top:13px;padding:12px;border-radius:13px;
+    background:#fff8e8;border:1px solid #f0dda9;color:#705400;
+    font-size:12px;line-height:1.8;
+}
+.payment-confirmation{
+    display:flex;align-items:flex-start;gap:9px;margin-top:14px;
+    cursor:pointer;font-size:12px;line-height:1.7;
+}
+.payment-confirmation input{width:18px;height:18px;accent-color:var(--blue);flex:0 0 auto}
+@media(max-width:700px){
+    .delivery-form-grid,.delivery-summary{grid-template-columns:1fr}
+    .delivery-grand-total{grid-column:auto!important}
+    .invoice-section-title{flex-direction:column;gap:4px}
+    .payment-number{flex-direction:column;align-items:flex-start;gap:6px}
+}
+
 /* ================= INVOICE ================= */
 .invoice-overlay{
     position:fixed;
@@ -656,20 +1020,6 @@ body{
     grid-template-columns:1fr 1.5fr;
     gap:10px;
     margin-top:20px;
-}
-
-.invoice-pdf{
-    border:none;
-    padding:14px;
-    border-radius:13px;
-    font-weight:bold;
-    cursor:pointer;
-    background:#198754;
-    color:white;
-}
-
-.invoice-pdf:hover{
-    filter:brightness(.93);
 }
 
 .invoice-back,
@@ -881,41 +1231,6 @@ body{
     font-weight:600;
     letter-spacing:.3px;
 }
-
-@media print{
-    body > *:not(#invoiceOverlay){
-        display:none !important;
-    }
-
-    #invoiceOverlay{
-        position:static !important;
-        inset:auto !important;
-        display:block !important;
-        background:#fff !important;
-        padding:0 !important;
-        overflow:visible !important;
-    }
-
-    #invoiceOverlay .invoice-card{
-        width:100% !important;
-        max-width:none !important;
-        margin:0 !important;
-        box-shadow:none !important;
-        border:0 !important;
-    }
-
-    #invoiceOverlay .invoice-actions,
-    #invoiceOverlay .invoice-note,
-    #invoiceOverlay .close-invoice{
-        display:none !important;
-    }
-
-    #invoiceOverlay .invoice-header{
-        -webkit-print-color-adjust:exact !important;
-        print-color-adjust:exact !important;
-    }
-}
-
 
 /* ================= MAINTENANCE MODE ================= */
 #maintenancePage{
@@ -1149,23 +1464,20 @@ body{
 <body>
 
 <!-- ================= MAINTENANCE PAGE ================= -->
-<div id="maintenancePage" aria-label="الموقع مغلق مؤقتًا">
+<div id="maintenancePage" aria-label="ترقبوا افتتاح الموقع اليوم الجمعة بعد صلاة الجمعة">
     <div class="maintenance-box">
         <img src="logo.jpg" class="maintenance-logo" alt="البشندي">
-        <div class="maintenance-icon">🔒</div>
-        <div class="maintenance-badge">الموقع مغلق مؤقتًا</div>
+        <div class="maintenance-icon">🎉</div>
+        <div class="maintenance-badge">ترقبوا افتتاح الموقع اليوم الجمعة</div>
 
-        <h1>عميلنا العزيز</h1>
+        <h1>العروض تبدأ اليوم 🔥</h1>
 
-        <p>
-            الموقع مغلق الآن مؤقتًا<br>
-            لحين الإعلان الرسمي عن بداية عروض نهاية العام.
-        </p>
+
 
         <div class="maintenance-highlight">
-            بمجرد الإعلان عن بدء العروض، سيفتح الموقع لمدة
-            <strong>24 ساعة فقط</strong>
-            وسيكون متاحًا لجميع العملاء.
+            ⏰ <strong>موعد الافتتاح: اليوم الجمعة بعد صلاة الجمعة</strong><br>
+            مع بدء العروض رسميًا، هيفتح الموقع وتبدأ العروض.<br>
+            <strong>جهزوا نفسكم لأقوى الأسعار 🔥</strong>
         </div>
 
         <div class="maintenance-contact-title">
@@ -1232,6 +1544,159 @@ body{
 
 </section>
 
+
+
+<!-- ================= BRIDAL PREPARATION PACKAGES ================= -->
+<section class="packages-section" id="bridalPackages">
+
+    <div class="packages-heading">
+        <div>
+            <span class="packages-kicker">تجهيز العروسة بسهولة</span>
+            <h2>باقات تجهيز العرائس</h2>
+            <p>
+                اختاري الباقة المناسبة لميزانيتك، وخلي تجهيز بيتك أسهل وأسرع.
+                كل باقة بتجمع لك جهاز العروسة في مكان واحد بدل اللف والدوران.
+            </p>
+        </div>
+
+        <div class="packages-badge">
+            <strong>300+</strong>
+            <span>منتج فعلي في كل باقة</span>
+        </div>
+    </div>
+
+    <div class="packages-grid">
+
+        <article class="package-card">
+            <div class="package-top">
+                <span class="package-label">البداية الذكية</span>
+                <span class="package-icon">🏠</span>
+            </div>
+
+            <h3>باقة تجهيز 80 ألف جنيه</h3>
+            <div class="package-saving">💰 وفر أكتر من 10,000 جنيه تقريبًا في الجهاز كامل</div>
+
+            <div class="package-price">
+                80,000 <span>جنيه</span>
+            </div>
+
+            <p class="package-description">
+                باقة متكاملة للعروسة اللي عايزة تجهز بيتها باختيارات عملية
+                وتبدأ حياتها وهي مطمنة إن الأساسيات كلها متجمعة في مكان واحد.
+            </p>
+
+            <ul class="package-features">
+                <li>✓ أكثر من 300 منتج فعلي داخل الباقة</li>
+                <li>✓ أدوات منزلية ومطبخ ورفايع</li>
+                <li>✓ بلاستيك وزجاج ضمن التجهيز</li>
+                <li>✓ الاختيار من خامات وفئات مناسبة للميزانية</li>
+                <li>✓ الضمان حسب خامة وماركة المنتج</li>
+                <li>🎁 قسم البلاستيك بالكامل هدية أثناء فترة العروض بقيمة 4,500 جنيه</li>
+                <li>⚡ تجهيز أسرع بدل شراء كل قسم لوحده</li>
+            </ul>
+
+            <div class="package-note">
+                <strong>ليه الباقة؟</strong>
+                <span>بدل ما تلفي على عشرات الأقسام وتضيعي وقتك، الباقة بتجمع احتياجات البيت الأساسية في خطة تجهيز واحدة.</span>
+            </div>
+
+            <button class="package-btn" onclick="selectPackage('باقة تجهيز 80 ألف جنيه', 80000)">
+                اختار الباقة
+            </button>
+        </article>
+
+
+        <article class="package-card package-featured">
+            <div class="package-ribbon">الأكثر طلبًا</div>
+
+            <div class="package-top">
+                <span class="package-label">التجهيز المتوازن</span>
+                <span class="package-icon">✨</span>
+            </div>
+
+            <h3>باقة تجهيز 100 ألف جنيه</h3>
+            <div class="package-saving">💰 وفر أكتر من 12,000 جنيه تقريبًا في الجهاز كامل</div>
+
+            <div class="package-price">
+                100,000 <span>جنيه</span>
+            </div>
+
+            <p class="package-description">
+                اختيار متوازن بين تنوع المنتجات ومستوى الخامات والضمان،
+                مناسب للعروسة اللي عايزة تجهيز أكبر وراحة أكتر في الاختيار.
+            </p>
+
+            <ul class="package-features">
+                <li>✓ أكثر من 300 منتج فعلي داخل الباقة</li>
+                <li>✓ جهاز العروسة كامل: مطبخ ورفايع وأدوات منزلية</li>
+                <li>✓ بلاستيك وزجاج ضمن التجهيز</li>
+                <li>✓ خامات أعلى واختيارات أوسع من الباقة الاقتصادية</li>
+                <li>✓ مدد ضمان تختلف حسب الخامة والماركة</li>
+                <li>🎁 قسم البلاستيك بالكامل هدية أثناء فترة العروض بقيمة 4,500 جنيه</li>
+                <li>🚚 اختصار وقت ومجهود التجهيز من مكان واحد</li>
+            </ul>
+
+            <div class="package-note">
+                <strong>تجهيز من غير وجع دماغ</strong>
+                <span>اختيارات أكتر، تنوع أكبر، وتجميع احتياجات البيت في يوم واحد بدل ما كل صنف ياخد مشوار لوحده.</span>
+            </div>
+
+            <button class="package-btn" onclick="selectPackage('باقة تجهيز 100 ألف جنيه', 100000)">
+                اختاري الباقة
+            </button>
+        </article>
+
+
+        <article class="package-card package-premium">
+            <div class="package-top">
+                <span class="package-label">التجهيز المميز</span>
+                <span class="package-icon">👑</span>
+            </div>
+
+            <h3>باقة تجهيز 135 ألف جنيه</h3>
+            <div class="package-saving">💰 وفر أكتر من 18,000 جنيه تقريبًا في الجهاز كامل</div>
+
+            <div class="package-price">
+                135,000 <span>جنيه</span>
+            </div>
+
+            <p class="package-description">
+                باقة تجهيز بمستوى أعلى من التنوع والخامات، للعروسة اللي عايزة
+                تختار براحة وتجمع تجهيز بيتها بالكامل في تجربة واحدة منظمة.
+            </p>
+
+            <ul class="package-features">
+                <li>✓ أكثر من 300 منتج فعلي داخل الباقة</li>
+                <li>✓ جهاز العروسة كامل بكل الأقسام الأساسية</li>
+                <li>✓ أدوات مطبخ ورفايع وأدوات منزلية</li>
+                <li>✓ بلاستيك وزجاج ضمن التجهيز</li>
+                <li>✓ اختيارات مميزة من الخامات والماركات</li>
+                <li>✓ مدد ضمان حسب الخامة والماركة المختارة</li>
+                <li>🎁 قسم البلاستيك بالكامل هدية أثناء فترة العروض بقيمة 4,500 جنيه</li>
+                <li>💎 مساحة أكبر للاختيار والتخصيص داخل الباقة</li>
+            </ul>
+
+            <div class="package-note">
+                <strong>كل حاجة في خطة واحدة</strong>
+                <span>اختاري مستوى التجهيز المناسب، وسيبي علينا مهمة تجميع الأصناف وترتيبها بدل ما تعيشي رحلة تجهيز طويلة ومتعبة.</span>
+            </div>
+
+            <button class="package-btn" onclick="selectPackage('باقة تجهيز 135 ألف جنيه', 135000)">
+                اختاري الباقة
+            </button>
+        </article>
+
+    </div>
+
+    <div class="package-bottom-note">
+        <strong>🎁 هدية العروض</strong>
+        <span>
+            كل الباقات تشمل قسم البلاستيك بالكامل هدية خلال فترة العروض،
+            بقيمة 4,500 جنيه، وفق تفاصيل وتوافر العرض.
+        </span>
+    </div>
+
+</section>
 
 <!-- ================= PRODUCTS ================= -->
 
@@ -1367,15 +1832,81 @@ body{
                 <span>إجمالي الطلب</span>
                 <strong><span id="invoiceTotal">0</span> جنيه</strong>
             </div>
+            <div class="invoice-delivery-section">
+                <div class="invoice-section-title">
+                    <span>🚚 بيانات التوصيل</span>
+                    <small>اختار منطقتك واكتب العنوان بالتفصيل</small>
+                </div>
+
+                <div class="delivery-form-grid">
+                    <div class="delivery-field">
+                        <label for="deliveryArea">منطقة التوصيل</label>
+                        <select id="deliveryArea">
+                            <option value="">اختر منطقة التوصيل</option>
+                            <option value="موط" data-price="30">موط — 30 جنيه</option>
+                            <option value="الشيخ والي" data-price="50">الشيخ والي — 50 جنيه</option>
+                            <option value="الهنداو" data-price="70">الهنداو — 70 جنيه</option>
+                            <option value="العوينة" data-price="90">العوينة — 90 جنيه</option>
+                            <option value="المعصرة" data-price="90">المعصرة — 90 جنيه</option>
+                            <option value="الدهوس" data-price="75">الدهوس — 75 جنيه</option>
+                            <option value="اسمنت" data-price="110">اسمنت — 110 جنيه</option>
+                            <option value="القلمون" data-price="130">القلمون — 130 جنيه</option>
+                            <option value="الراشدة" data-price="130">الراشدة — 130 جنيه</option>
+                            <option value="عين القضا" data-price="150">عين القضا — 150 جنيه</option>
+                            <option value="منتجع الرملة" data-price="160">منتجع الرملة — 160 جنيه</option>
+                            <option value="بدخلو" data-price="160">بدخلو — 160 جنيه</option>
+                            <option value="الجديدة" data-price="170">الجديدة — 170 جنيه</option>
+                            <option value="المطار" data-price="140">المطار — 140 جنيه</option>
+                            <option value="عزب القصر" data-price="200">عزب القصر — 200 جنيه</option>
+                            <option value="القصر" data-price="250">القصر — 250 جنيه</option>
+                            <option value="الموشية" data-price="190">الموشية — 190 جنيه</option>
+                        </select>
+                    </div>
+
+                    <div class="delivery-field">
+                        <label for="deliveryAddress">العنوان التفصيلي</label>
+                        <textarea id="deliveryAddress" rows="3"
+                            placeholder="اكتب الشارع والمنطقة وأقرب علامة مميزة..."></textarea>
+                    </div>
+                </div>
+
+                <div class="delivery-summary">
+                    <div><span>إجمالي المنتجات</span><strong><span id="invoiceSubtotal">0</span> جنيه</strong></div>
+                    <div><span>سعر التوصيل</span><strong><span id="deliveryFee">0</span> جنيه</strong></div>
+                    <div class="delivery-grand-total">
+                        <span>الإجمالي النهائي شامل التوصيل</span>
+                        <strong><span id="invoiceGrandTotal">0</span> جنيه</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="invoice-payment-box">
+                <div class="invoice-section-title">
+                    <span>💳 الدفع وتحويل المبلغ كاملًا</span>
+                    <small>إنستا باي أو محفظة إلكترونية</small>
+                </div>
+                <div class="payment-number">
+                    <span>رقم التحويل</span>
+                    <strong>01273968740</strong>
+                </div>
+                <div class="payment-name">الاسم: <strong>احمد ع**\*\*\* م\*\*\*** ب\*\*\*</strong></div>
+                <div class="payment-warning">
+                    ⚠️ يتم تحويل <strong>المبلغ كاملًا شامل التوصيل</strong> ثم تأكيد الطلب وإرساله عبر واتساب.
+                </div>
+                <label class="payment-confirmation">
+                    <input type="checkbox" id="paymentConfirmation">
+                    <span>أؤكد أنني راجعت الطلب والعنوان وسأقوم بتحويل المبلغ كاملًا قبل إرسال الطلب.</span>
+                </label>
+            </div>
 
             <div class="invoice-note">
-                راجع الأصناف والكميات والأسعار. يمكنك حفظ الفاتورة كملف PDF من زر «تحميل الفاتورة PDF»، أو إرسال تفاصيل الطلب عبر واتساب.
+                راجع الأصناف والكميات والأسعار قبل الإرسال.
+                <strong>تأكيد الطلب النهائي وإرساله يتم عبر واتساب.</strong>
             </div>
 
             <div class="invoice-actions">
-                <button class="invoice-back" id="invoiceBack">العودة للسلة</button>
-                <button class="invoice-pdf" id="printInvoice">🧾 تحميل الفاتورة PDF</button>
-                <button class="invoice-whatsapp" id="sendInvoiceWhatsApp">🟢 تأكيد وإرسال عبر واتساب</button>
+                <button class="invoice-back" id="invoiceBack">العودة للسلة وتعديل الطلب</button>
+                <button class="invoice-whatsapp" id="sendInvoiceWhatsApp">🟢 تأكيد الطلب وإرسال عبر واتساب</button>
             </div>
         </div>
     </div>
@@ -1405,7 +1936,7 @@ if (maintenanceMode) {
    رقم واتساب
 ========================================================= */
 
-const WHATSAPP_NUMBER = "201063099017";
+const WHATSAPP_NUMBER = "201273968740";
 
 
 /* =========================================================
@@ -1414,89 +1945,299 @@ const WHATSAPP_NUMBER = "201063099017";
 
 const products = [
 
-    {id:"508",name:"منشر مربع كبير الاندلس",price:47},
-    {id:"805",name:"باسكت تيبو مربع الاندلس",price:51},
-    {id:"2011",name:"طبلية جديدة",price:225},
-    {id:"2012",name:"كرسي روزيتا صغير",price:43},
-    {id:"2013",name:"كرسي روزيتا كبير",price:70},
-    {id:"2024",name:"باسكت برايم",price:96},
-    {id:"2027",name:"علبة مسحوق دانتيلا",price:95},
-    {id:"2028",name:"باسكت تيبو مدور",price:48},
-    {id:"2032",name:"زبالة تركي مقاس 1 (1.5 لتر)",price:24},
-    {id:"2033",name:"زبالة تركي مقاس 2 (3.0 لتر)",price:53},
-    {id:"2034",name:"زبالة تركي مقاس 3 (6.0 لتر)",price:94},
-    {id:"2035",name:"زبالة تركي مقاس 4 (13.0 لتر)",price:135},
-    {id:"2040",name:"مصفاه روجينا باليد",price:17},
-    {id:"2041",name:"مصفاه ميرو",price:20},
-    {id:"2042",name:"منظم مطبخ وحمام",price:45},
-    {id:"2044",name:"منظم تلاجة متعدد الاغراض",price:26},
-    {id:"2045",name:"قاطع خضراوات فيجا",price:75},
-    {id:"2046",name:"مصفاه كلاود",price:56},
-    {id:"2047",name:"منظم تلاجة مربع",price:29},
-    {id:"2048",name:"منظم تلاجة مستطيل",price:25},
-    {id:"2049",name:"طبق تسالي ابل الاندلس بلاستيك",price:50},
-    {id:"2050",name:"طبق فاكهة روزا 1",price:10},
-    {id:"2051",name:"طبق فاكهة روزا 2",price:14},
-    {id:"2052",name:"طبق فاكهة روزا 3",price:19},
-    {id:"2053",name:"طبق فاكهة روزا 4",price:30},
-    {id:"2054",name:"طبق ديفا مدور",price:64},
-    {id:"2055",name:"طبق ديفا بيضاوي",price:60},
-    {id:"2057",name:"عصارة موجة",price:23},
-    {id:"2063",name:"طقم علبة سندريلا 3*1",price:124},
-    {id:"2066",name:"مطبقية كلاس",price:110},
-    {id:"2067",name:"حافظة خبز",price:180},
-    {id:"2068",name:"حافظة كيك",price:87},
-    {id:"2069",name:"مجفف سبين",price:134},
-    {id:"2070",name:"باسكت فيولا دانتيلا صغير",price:8},
-    {id:"2071",name:"باسكت فيولا دانتيلا وسط",price:12},
-    {id:"2080",name:"طقم توابل ايزي مربع 4 قطع",price:85},
-    {id:"2081",name:"طقم توابل ايزي مستطيل 3 قطع",price:65},
-    {id:"2088",name:"ماجور ميجو 1 سادة",price:46},
-    {id:"2089",name:"ماجور ميجو 2 سادة",price:73},
-    {id:"2090",name:"ماجور ميجو 3 سادة",price:109},
-    {id:"2091",name:"طشت ميجو 1 سادة",price:45},
-    {id:"2092",name:"طشت ميجو 2 سادة",price:65},
-    {id:"2093",name:"طشت ميجو 3 سادة",price:119},
-    {id:"2094",name:"طشت ميجو 4 سادة",price:133},
-    {id:"2095",name:"سبت برايم 1 كيس",price:176},
-    {id:"2381",name:"ماجور ميجو 4 سادة",price:163},
-    {id:"2870",name:"منظم فلاور",price:79},
-    {id:"2873",name:"بولا دائرية دايني 1",price:12},
-    {id:"2874",name:"بولا دائرية دايني 2",price:19},
-    {id:"2875",name:"بولا دائرية دايني 3",price:28},
-    {id:"2876",name:"بولا دائرية دايني 4",price:38},
-    {id:"2877",name:"بولا دائرية دايني 5",price:53},
-    {id:"2878",name:"باسكت سمارت مربع تاتش لارج",price:278},
-    {id:"2880",name:"باسكت سمارت مربع مروحة لارج",price:260},
-    {id:"2882",name:"زبالة ايرا 1",price:91},
-    {id:"2883",name:"زبالة ايرا 3",price:168},
-    {id:"2884",name:"سرفيس ايطالي",price:24},
-    {id:"2885",name:"سلة مطبخ",price:54},
-    {id:"2889",name:"طقم ماربيلا 1*4 مستطيل",price:98},
-    {id:"2891",name:"جردل هواوي",price:99},
-    {id:"2896",name:"شماعة كلاس",price:39},
-    {id:"2924",name:"كرسي كومفي كافيه",price:250},
-    {id:"2925",name:"طرابيزة لوتس مربعة",price:250},
-    {id:"3122",name:"برو بوكس 6 - 42 لتر",price:279},
-    {id:"3123",name:"برو بوكس 7 - 72 لتر",price:379},
-    {id:"3124",name:"باسكت سمارت مربع تاتش ميني",price:207},
-    {id:"3125",name:"مصفاه ناني",price:17},
-    {id:"3126",name:"علب ماربيلا 1*4 مربع",price:104},
-    {id:"3127",name:"طقم علب ماربيلا 3*1 مدور",price:56},
-    {id:"3128",name:"برو بوكس 3",price:67},
-    {id:"3129",name:"برو بوكس 4",price:114},
-    {id:"3130",name:"مراية كلاسيك",price:242},
-    {id:"3131",name:"مرايا جلاكسي",price:206},
-    {id:"3132",name:"طقم علب تلاجة برو بوكس 3*1",price:137},
-    {id:"3133",name:"طبق دايني مدور 3",price:16},
-    {id:"3134",name:"طبق دايني مدور 4",price:28},
-    {id:"3135",name:"طقم برايم 12 قطعة",price:870},
-    {id:"3136",name:"طقم توابل كريستال 4 قطعة",price:80},
-    {id:"3137",name:"زبالة ايرا 2",price:128},
-    {id:"3138",name:"دورق توتي",price:23},
-    {id:"3139",name:"طقم المعيار",price:18},
-    {id:"3140",name:"بستلة ميجو 35 لتر شفاف",price:178},
-    {id:"3141",name:"بستلة ميجو 50 لتر شفاف",price:246}
+{id:"144",name:"طقم كلبس تيفال اشكال",price:135},
+{id:"162",name:"مطحنة توابل كهرباء",price:225},
+{id:"265",name:"دسة معلقة اكل",price:51},
+{id:"1015",name:"شيالة حلويات سيلكون",price:33},
+{id:"1263",name:"مج شي ان مضلع تاج",price:25},
+{id:"1273",name:"بخاخة زيت زجاج + استيل",price:51},
+{id:"1409",name:"ولاعة تايب سي شرزر",price:45},
+{id:"1411",name:"سكينة فواكهه 1*6 كارت",price:38},
+{id:"1446",name:"عصارة ليمون استيل تقيلة تركي صغيرة",price:156},
+{id:"1493",name:"مساحة زجاج سيلكون سابتة",price:21},
+{id:"1605",name:"طقم بولات ستيل دهبي",price:335},
+{id:"1635",name:"مبشرة كف",price:26},
+{id:"1720",name:"استيكر بوتجاز حماية كبير",price:14},
+{id:"1734",name:"مساحة باركية اللوان",price:58},
+{id:"1735",name:"علبة مناديل فيونكة",price:43},
+{id:"1753",name:"طقم بولة بورسلين باندا 1*3",price:160},
+{id:"1766",name:"مج اي كوفي مستورد جلال",price:228},
+{id:"1908",name:"طقم بولات ستيل فضي",price:245},
+{id:"1940",name:"زجاجة مط استيل اسود باليد 800 ملي",price:300},
+{id:"1954",name:"مساحة باركيه مثلثة",price:95},
+{id:"2130",name:"مسن جامبو",price:36},
+{id:"2153",name:"طاسة وك اللوان",price:165},
+{id:"2256",name:"طقم صواني خشب ايكيا 3*1 فاتح وغامق",price:165},
+{id:"2311",name:"باسكت ايكيا سيلكون ضلفة",price:156},
+{id:"2753",name:"مصفاه تحمير نحاسي",price:245},
+{id:"2759",name:"كيس شوز غسالة",price:65},
+{id:"2780",name:"اباجورة زيرو",price:125},
+{id:"2971",name:"اسبيره دهون",price:45},
+{id:"2981",name:"طقم بولة بورسلين بطوط 1*3",price:165},
+{id:"3083",name:"شماعة اكليرك دابل فيس",price:55},
+{id:"3142",name:"مج حراري ديزني باليد",price:342},
+{id:"3143",name:"مج حراري زجاجة باليد باندا",price:324},
+{id:"3144",name:"مج حراري ديجتال فيونكة",price:120},
+{id:"3145",name:"مج حراري ديزني علاقة قلب",price:240},
+{id:"3146",name:"مج حراري زجاجة كب",price:210},
+{id:"3147",name:"مج حراري ديزني 2 روح",price:264},
+{id:"3148",name:"مج حراري ديزني علاقة مدورة",price:264},
+{id:"3149",name:"مج حراري ديزني غطاء اكليرك",price:270},
+{id:"3150",name:"مج حراري ديزني اسبيدر",price:270},
+{id:"3151",name:"مج حراري دبدوب",price:288},
+{id:"3152",name:"مج حراري دبدوب غلاف سيلكون",price:288},
+{id:"3153",name:"مج حراري استالي اللوان مدرج",price:300},
+{id:"3154",name:"مج حراري دبدوب xox",price:300},
+{id:"3155",name:"زجاجة استيل كبيرة حراري 800 ملي",price:205},
+{id:"3156",name:"مج حراري كوفي كبير",price:115},
+{id:"3157",name:"زجاجة استيل مدورة سادة",price:145},
+{id:"3158",name:"زجاجة استيل مدورة فيونكة",price:165},
+{id:"3159",name:"مصفى تحمير فضي",price:285},
+{id:"3160",name:"فوطة 5*1 كارت ايكا",price:16},
+{id:"3161",name:"اباجورة 3D",price:165},
+{id:"3162",name:"عصارة ليمون استيل تقيلة تركي جامبو",price:204},
+{id:"3163",name:"طقم مصفاه بالعجان والمبشرة جديد",price:185},
+{id:"3164",name:"كرستالة ثلاثية",price:378},
+{id:"3165",name:"شماعة لاف دابل فيس جديد",price:14.5},
+{id:"3166",name:"مناديل شوز",price:18},
+{id:"3167",name:"ركنة حمام عامود مستوردة",price:235},
+{id:"3168",name:"مساحة زجاج 360 درجة",price:33},
+{id:"3169",name:"كاتل زجاج بايركس",price:408},
+{id:"3170",name:"جاروف ايكيا 1*2 يد",price:222},
+{id:"3171",name:"مجموعة جاروف ايكيا اللوان",price:283},
+{id:"3172",name:"بلانشة استيل",price:480},
+{id:"3173",name:"مصفاه اعشاب",price:95},
+{id:"3174",name:"مصفاه سلك يد خشب كبيرة",price:72},
+{id:"3175",name:"مصفاه سلك يد خشب وسط",price:60},
+{id:"3176",name:"طاجن بايركس صيني بيضاوي",price:570},
+{id:"3177",name:"طاجن بايركس صيني مستطيل",price:564},
+{id:"3178",name:"طاجن بايركس بالغطاء صيني",price:750},
+{id:"3179",name:"رول سفرة 1 كيلو",price:66},
+{id:"3180",name:"كرستالة مربعة",price:396},
+{id:"3181",name:"زجاجة استيل سادة جلال",price:222},
+{id:"3182",name:"نايسر دايسر 22 قطعة",price:250},
+{id:"3183",name:"طقم معالق جولد 24",price:445},
+{id:"3184",name:"مج ايس كوفي مثلج",price:38},
+{id:"3185",name:"غسالة شربات",price:475},
+{id:"3186",name:"طقم تلاجة استيل ازرق",price:98},
+{id:"3187",name:"حافظة طعام شنطة",price:245},
+{id:"3188",name:"طقم جلي حز ذهبي",price:240},
+{id:"3189",name:"طقم تلاجة بومبيه",price:222},
+{id:"3190",name:"زجاجة زجاج حراري دبدوب",price:28},
+{id:"3191",name:"معطر تواليت حقن",price:28},
+{id:"3192",name:"مساحة وفرشة 2*1",price:32},
+{id:"2048",name:"منظم تلاجة مستطيل",price:25},
+{id:"3138",name:"دورق توتي",price:23},
+{id:"2046",name:"مصفاه كلاود",price:56},
+{id:"2896",name:"شماعة كلاس",price:39},
+{id:"2047",name:"منظم تلاجة مربع",price:29},
+{id:"2873",name:"بولا دائرية دايني 1",price:12},
+{id:"2032",name:"زبالة تركي مقاس 1 (1.5 لتر )",price:24},
+{id:"2071",name:"باسكت فيولا دانتيلا وسط",price:12},
+{id:"2040",name:"مصفاه روجينا باليد",price:17},
+{id:"2012",name:"كرسي روزيتا صغير",price:43},
+{id:"2042",name:"منظم مطبخ وحمام",price:45},
+{id:"508",name:"منشر مربع كبير الاندلس",price:47},
+{id:"2051",name:"طبق فاكهة روزا 2",price:14},
+{id:"2052",name:"طبق فاكهة روزا 3",price:19},
+{id:"2050",name:"طبق فاكهة روزا 1",price:10},
+{id:"2876",name:"بولا دائرية دايني 4",price:38},
+{id:"2070",name:"باسكت فيولا دانتيلا صغير",price:8},
+{id:"2053",name:"طبق فاكهة روزا 4",price:30},
+{id:"3134",name:"طبق دايني مدور 4",price:28},
+{id:"3133",name:"طبق دايني مدور 3",price:16},
+{id:"2059",name:"سندريلا 2",price:37},
+{id:"2884",name:"سرفيس ايطالي",price:24},
+{id:"2875",name:"بولا دائرية دايني 3",price:28},
+{id:"3125",name:"مصفاه ناني",price:17},
+{id:"2057",name:"عصارة موجة",price:23},
+{id:"3128",name:"برو بوكس 3",price:67},
+{id:"2891",name:"جردل هواوي",price:99},
+{id:"2041",name:"مصفاه ميرو",price:20},
+{id:"2874",name:"بولا دائرية دايني 2",price:19},
+{id:"2068",name:"حافظة كيك",price:87},
+{id:"2885",name:"سلة مطبخ",price:54},
+{id:"3139",name:"طقم المعيار",price:18},
+{id:"2089",name:"ماجور ميجو 2 سادة",price:73},
+{id:"2069",name:"مجفف سبين",price:134},
+{id:"2094",name:"طشت ميجو 4 سادة",price:133},
+{id:"3127",name:"طقم علب ماربيلا 3*1 مدور",price:56},
+{id:"2093",name:"طشت ميجو 3 سادة",price:119},
+{id:"2058",name:"سندريلا 1",price:23},
+{id:"2092",name:"طشت ميجو 2 سادة",price:65},
+{id:"2090",name:"ماجور ميجو 3 سادة",price:109},
+{id:"2088",name:"ماجور ميجو 1 سادة",price:46},
+{id:"2091",name:"طشت ميجو 1 سادة",price:45},
+{id:"2060",name:"سندريلا 3",price:57},
+{id:"2895",name:"شماعة ماجي",price:36},
+{id:"2044",name:"منظم تلاجة متعدد الاغراض",price:26},
+{id:"2877",name:"بولا دائرية دايني 5",price:53},
+{id:"2381",name:"ماجور ميجو 4 سادة",price:163},
+{id:"2870",name:"منظم فلاور",price:79},
+{id:"2924",name:"كرسي كومفي كافيه",price:250},
+{id:"2045",name:"قاطع خضراوات فيجا",price:75},
+{id:"2013",name:"كرسي روزيتا كبير",price:70},
+{id:"2033",name:"زبالة تركي مقاس 2 (3.0 لتر )",price:53},
+{id:"3129",name:"برو بوكس 4",price:114},
+{id:"2028",name:"باسكت تيبو مدور",price:48},
+{id:"2034",name:"زبالة تركي مقاس 3 (6.0 لتر )",price:94},
+{id:"2926",name:"كيس مشبك بلاستيك",price:14},
+{id:"2072",name:"باسكت فيولا دانتيلا كبير",price:40},
+{id:"2035",name:"زبالة تركي مقاس 4 (13.0 لتر )",price:135},
+{id:"2063",name:"طقم علبة سندريلا 3*1",price:124},
+{id:"805",name:"باسكت تيبو مربع الاندلس",price:51},
+{id:"2925",name:"طرابيزة لوتس مربعة",price:250},
+{id:"2064",name:"علبة جوهرة 2 بالديكور الاندلس",price:47},
+{id:"2889",name:"طقم ماربيلا 1*4 مستطيل",price:98},
+{id:"3126",name:"علب ماربيلا 1*4 مربع",price:104},
+{id:"2066",name:"مطبقية كلاس",price:110},
+{id:"2027",name:"علبة مسحوق دانتيلا",price:95},
+{id:"2067",name:"حافظة خبز",price:180},
+{id:"503",name:"علبة جوهرة 1 بالديكور الاندلس",price:30},
+{id:"2049",name:"طبق تسالي ابل الاندلس بلاستيك",price:50},
+{id:"2081",name:"طقم توابل ايزي مستطيل 3 قطع",price:65},
+{id:"2095",name:"سبت برايم 1 كيس",price:176},
+{id:"2883",name:"زبالة ايرا 3",price:168},
+{id:"2024",name:"باسكت برايم",price:96},
+{id:"2054",name:"طبق ديفا مدور",price:64},
+{id:"3140",name:"بستلة ميجو 35 لتر شفاف",price:178},
+{id:"3141",name:"بستلة ميجو 50 لتر شفاف",price:246},
+{id:"504",name:"علبة جوهرة 3 بالديكور الاندلس",price:67},
+{id:"2878",name:"باسكت سمارت مربع تاتش لارج",price:278},
+{id:"2880",name:"باسكت سمارت مربع مروحة لارج",price:260},
+{id:"3124",name:"باسكت سمارت مربع تاتش ميني",price:207},
+{id:"2080",name:"طقم توابل ايزي مربع 4 قطع",price:85},
+{id:"2321",name:"ياسكت روكت 50 ديكور",price:330},
+{id:"506",name:"علبة جوهرة 5 بالديكور الاندلس",price:215},
+{id:"2023",name:"سبت مشابك بوكيه",price:30},
+{id:"2320",name:"ياسكت روكت 50 سادة",price:285},
+{id:"2011",name:"طبلية جديدة",price:225},
+{id:"1594",name:"ببرونة اطفال كبيرة",price:35},
+{id:"2322",name:"كرسي برايم",price:81},
+{id:"2319",name:"ياسكت روكت 35 سادة",price:183},
+{id:"3135",name:"طقم برايم 12 قطعة",price:870},
+{id:"3137",name:"زبالة ايرا 2",price:128},
+{id:"2061",name:"سندريلا 4",price:126},
+{id:"2018",name:"شنطة اولجا",price:160},
+{id:"2882",name:"زبالة ايرا 1",price:91},
+{id:"2927",name:"فرشة بلاط التعلب",price:20},
+{id:"3123",name:"برو بوكس 7 - 72 لتر",price:379},
+{id:"3132",name:"طقم علب تلاجة برو بوكس 3*1",price:137},
+{id:"3122",name:"برو بوكس 6 - 42 لتر",price:279},
+{id:"803",name:"كرسي حمام روكا الاندلس",price:79},
+{id:"2055",name:"طبق ديفا بيضاوي",price:60},
+{id:"2075",name:"درج معالق وشوك",price:28},
+{id:"2078",name:"طقم توابل ايزي مستطيل 4 قطعة",price:80},
+{id:"555",name:"حافظة طعام ثلاثية البسيوني",price:24},
+{id:"2017",name:"بستلة ميجو 35 لتر سادة",price:158},
+{id:"2318",name:"ياسكت روكت 35 ديكور",price:215},
+{id:"507",name:"منشر مدور كبير الاندلس",price:47},
+{id:"3130",name:"مراية كلاسيك",price:242},
+{id:"2016",name:"بستلة ميجو 50 لتر سادة",price:227},
+{id:"2019",name:"طقم برايم 5 قطع",price:243},
+{id:"3136",name:"طقم توابل كريستال 4 قطعة",price:80},
+{id:"2085",name:"سبت كوفا 2",price:62},
+{id:"3131",name:"مرايا جلاكسي",price:206},
+{id:"1595",name:"ببرونة اطفال صغيرة",price:30},
+{id:"2084",name:"سبت كوفا 1",price:38},
+{id:"2043",name:"منظم ادراج اندلس",price:55},
+{id:"505",name:"علبة جوهرة 4 بالديكور الاندلس",price:151},
+{id:"1033",name:"سبت غسيل هاي دقدق",price:135},
+{id:"815",name:"بانيو اطفال الوكيل",price:100},
+{id:"2079",name:"ركنة دريم 3 دور",price:61},
+{id:"807",name:"بستلة ميجو 50 لتر بالديكور الاندلس",price:253},
+{id:"486",name:"صينية تقديم اكليرك ليث",price:70},
+{id:"2086",name:"سبت كوفا 3",price:92},
+{id:"534",name:"ستاند 3 دور سفن ستارز و الهضبة",price:126},
+{id:"528",name:"زبالة رتان صغيرة الهلال والنجمة",price:65},
+{id:"809",name:"ماجور بوبوس 1 ديكور الهلال",price:49},
+{id:"495",name:"ماجور بوبوس 4 ديكور الهلال والنجمة",price:130},
+{id:"2062",name:"سندريلا 5",price:186},
+{id:"2377",name:"مطبقية ياسمينا بصينيه",price:120},
+{id:"2378",name:"مطبقية ياسمينا بدون صينيه",price:110},
+{id:"2006",name:"استاند بيمبو 4 دور",price:305},
+{id:"808",name:"ماجور بوبوس 2 ديكور الهلال",price:72},
+{id:"544",name:"مطبقية ستايل اورجانيزر ابو سيفين",price:395},
+{id:"2001",name:"دورق تلاجة فروتي 2 مج",price:31},
+{id:"2361",name:"طقم غزالة 1*3",price:235},
+{id:"1709",name:"طقم مج صيني 4*1 منقوش",price:195},
+{id:"1681",name:"طبق فاكهه كريستال سيتي بالقاعدة",price:275},
+{id:"2653",name:"منتج خزف البشندي 75",price:830},
+{id:"2650",name:"منتج خزف البشندي 173",price:830},
+{id:"2107",name:"مج بورسلين ايكيا بورسلين مضلع",price:57},
+{id:"2659",name:"منتج خزف البشندي 194",price:850},
+{id:"2658",name:"منتج خزف البشندي 70",price:790},
+{id:"2661",name:"منتج خزف البشندي 150",price:750},
+{id:"2662",name:"منتج خزف البشندي 148",price:750},
+{id:"2664",name:"منتج خزف البشندي 72",price:1020},
+{id:"2665",name:"منتج خزف البشندي 42",price:780},
+{id:"2666",name:"منتج خزف البشندي 183",price:770},
+{id:"2667",name:"منتج خزف البشندي 176",price:900},
+{id:"2668",name:"منتج خزف البشندي 172",price:500},
+{id:"2669",name:"منتج خزف البشندي 169",price:485},
+{id:"2670",name:"منتج خزف البشندي 174",price:630},
+{id:"2671",name:"منتج خزف البشندي 192",price:510},
+{id:"2672",name:"منتج خزف البشندي 177",price:730},
+{id:"2673",name:"منتج خزف البشندي 171",price:510},
+{id:"2705",name:"اركوبايركس 52 ليمونارك الاصلي",price:3850},
+{id:"2706",name:"اركوبال 52 تايجر",price:2850},
+{id:"2707",name:"طقم اركوبال 67 اسود ماغنسيوم مربع",price:3650},
+{id:"2708",name:"طقم اركوبال 67 اسود ماغنسيوم مدور",price:3650},
+{id:"2714",name:"ورقة مجات عادية 6 قطع قهوة",price:50},
+{id:"2824",name:"منتج خزف البشندي 178",price:980},
+{id:"2825",name:"منتج خزف البشندي 188",price:550},
+{id:"2826",name:"منتج خزف البشندي 195",price:850},
+{id:"2827",name:"منتج خزف البشندي 68",price:865},
+{id:"2828",name:"منتج خزف البشندي 67",price:780},
+{id:"2829",name:"منتج خزف البشندي 175",price:690},
+{id:"2832",name:"منتج خزف البشندي 64",price:550},
+{id:"2864",name:"دورق ميكسر بيض",price:63},
+{id:"1611",name:"مناديل كيتشن ويبس",price:45},
+{id:"1610",name:"مناديل بيبي ويبس + شوز ويبس + كار ويبس",price:18},
+{id:"1207",name:"طبق قوقعة - OX-56",price:65},
+{id:"1206",name:"طبق ورق شجر - OX-68",price:65},
+{id:"1199",name:"طبق ورق شجر كبير- OX-41",price:65},
+{id:"1198",name:"طبق ورق شجر كبير- OX-40",price:65},
+{id:"1197",name:"طبق ورق شجر كبير- OX-39",price:65},
+{id:"1196",name:"طبق ورق شجر - OX-67",price:65},
+{id:"1195",name:"طبق ورق شجر - OX-66",price:65},
+{id:"1194",name:"طبق نجمة - OX-63",price:65},
+{id:"1193",name:"طبق نجمة - OX-62",price:65},
+{id:"1192",name:"طبق نجمة - OX-61",price:65},
+{id:"1191",name:"طبق نجمة - OX-73",price:65},
+{id:"1190",name:"طبق نجمة - OX-72",price:65},
+{id:"1189",name:"طبق نجمة - OX-71",price:65},
+{id:"1188",name:"طبق قوقعة - OX-59",price:65},
+{id:"1187",name:"طبق قوقعة - OX-58",price:65},
+{id:"1115",name:"طقم كاسات تركي 3",price:550},
+{id:"1094",name:"طقم فطار بورسلين بونشينا",price:2950},
+{id:"1067",name:"طقم فطار مط",price:2850},
+{id:"2938",name:"عصاية شيش 1",price:10},
+{id:"2939",name:"عصاية شيش 2",price:11},
+{id:"2940",name:"عصاية شيش 3",price:12},
+{id:"2941",name:"عصاية شيش 4",price:13},
+{id:"2946",name:"علبة مناديل ويبس ملابس",price:30},
+{id:"1036",name:"طبق تسالي الاندلس بلاستيك",price:43},
+{id:"2660",name:"منتج خزف البشندي 149",price:750},
+{id:"861",name:"طقم خشاف بولات سيتي جلاس",price:430},
+{id:"835",name:"طقم كاسات 6 قطع تركي 2",price:350},
+{id:"2657",name:"منتج خزف البشندي 76",price:830},
+{id:"2656",name:"منتج خزف البشندي 63",price:550},
+{id:"2655",name:"منتج خزف البشندي 073",price:750},
+{id:"2654",name:"منتج خزف البشندي 74",price:820},
+{id:"743",name:"طقم جيرانيت سافلون 17 قطعة",price:3850},
+{id:"656",name:"طقم 13 قطعة 32 نيو فلام",price:3500},
+{id:"2649",name:"منتج خزف البشندي 184",price:730},
+{id:"2647",name:"منتج خزف البشندي 40",price:550},
+{id:"2646",name:"منتج خزف البشندي 186",price:720},
+{id:"2645",name:"منتج خزف البشندي 191",price:550},
+{id:"2394",name:"ورقة شوب عصير 6 قطعة منقوشة",price:75},
+{id:"2388",name:"ورقة كوباية شاي 6 قطعة عادية",price:55},
+{id:"484",name:"باسكت ريكي بالغطاء والكرتونة ليث",price:100},
+{id:"389",name:"طقم فطار مربع شجرة",price:2850},
+{id:"43",name:"طقم فطار بورسلين صيني ميكس",price:2950},
+{id:"17",name:"طقم كاسات 6 قطع تركي",price:450},
+{id:"3166",name:"مناديل شوز",price:18}
 
 ];
 
@@ -1524,16 +2265,7 @@ const toast = document.getElementById("toast");
 
 const invoiceOverlay = document.getElementById("invoiceOverlay");
 const closeInvoice = document.getElementById("closeInvoice");
-const invoiceBack = document.getElementById("invoiceBack");
-const printInvoice = document.getElementById("printInvoice");
-
-if (printInvoice) {
-    printInvoice.addEventListener("click", function () {
-        window.print();
-    });
-}
-
-const sendInvoiceWhatsApp = document.getElementById("sendInvoiceWhatsApp");
+const invoiceBack = document.getElementById("invoiceBack");const sendInvoiceWhatsApp = document.getElementById("sendInvoiceWhatsApp");
 const invoiceItems = document.getElementById("invoiceItems");
 const invoiceTotal = document.getElementById("invoiceTotal");
 const invoiceOrderNumber = document.getElementById("invoiceOrderNumber");
@@ -1890,6 +2622,29 @@ clearCart.addEventListener("click", () => {
 });
 
 
+
+/* =========================================================
+   باقات تجهيز العرائس
+========================================================= */
+
+function selectPackage(packageName, packagePrice){
+
+    cart = [{
+        id:"PACKAGE-" + Date.now(),
+        name:packageName,
+        price:packagePrice,
+        quantity:1,
+        isPackage:true
+    }];
+
+    saveCart();
+    updateCart();
+    openInvoice();
+
+    showToast("تم اختيار " + packageName + " ✓");
+}
+
+
 /* =========================================================
    الفاتورة
 ========================================================= */
@@ -1909,6 +2664,34 @@ function formatDateTime(){
     });
 }
 
+
+let selectedDeliveryArea = "";
+let selectedDeliveryFee = 0;
+
+const deliveryArea = document.getElementById("deliveryArea");
+const deliveryAddress = document.getElementById("deliveryAddress");
+const deliveryFeeElement = document.getElementById("deliveryFee");
+const invoiceSubtotalElement = document.getElementById("invoiceSubtotal");
+const invoiceGrandTotalElement = document.getElementById("invoiceGrandTotal");
+const paymentConfirmation = document.getElementById("paymentConfirmation");
+
+function updateDeliveryTotal(){
+    const subtotal = cart.reduce((sum,item)=>sum + item.price * item.quantity,0);
+
+    if(deliveryArea){
+        const option = deliveryArea.options[deliveryArea.selectedIndex];
+        selectedDeliveryArea = deliveryArea.value;
+        selectedDeliveryFee = option && option.dataset.price ? Number(option.dataset.price) : 0;
+    }
+
+    if(invoiceSubtotalElement) invoiceSubtotalElement.textContent = subtotal.toLocaleString("ar-EG");
+    if(deliveryFeeElement) deliveryFeeElement.textContent = selectedDeliveryFee.toLocaleString("ar-EG");
+    if(invoiceGrandTotalElement) invoiceGrandTotalElement.textContent = (subtotal + selectedDeliveryFee).toLocaleString("ar-EG");
+    if(invoiceTotal) invoiceTotal.textContent = (subtotal + selectedDeliveryFee).toLocaleString("ar-EG");
+}
+
+if(deliveryArea) deliveryArea.addEventListener("change",updateDeliveryTotal);
+
 function openInvoice(){
     if(cart.length === 0){
         showToast("السلة فارغة");
@@ -1920,6 +2703,13 @@ function openInvoice(){
     invoiceOrderNumber.textContent = currentOrderNumber;
     invoiceDate.textContent = formatDateTime();
 
+    if(deliveryArea) deliveryArea.value = "";
+    if(deliveryAddress) deliveryAddress.value = "";
+    if(paymentConfirmation) paymentConfirmation.checked = false;
+
+    selectedDeliveryArea = "";
+    selectedDeliveryFee = 0;
+
     invoiceItems.innerHTML = "";
 
     cart.forEach((item,index) => {
@@ -1929,7 +2719,9 @@ function openInvoice(){
         row.innerHTML = `
             <div class="invoice-product-name">
                 ${item.name}
-                <span class="invoice-product-code">كود: ${item.id}</span>
+                <span class="invoice-product-code">
+                    ${item.isPackage ? "باقة تجهيز العرائس" : "كود: " + item.id}
+                </span>
             </div>
             <div class="invoice-quantity">${item.quantity}</div>
             <div class="invoice-unit-price">${item.price.toLocaleString("ar-EG")} ج</div>
@@ -1945,6 +2737,7 @@ function openInvoice(){
     );
 
     invoiceTotal.textContent = total.toLocaleString("ar-EG");
+    updateDeliveryTotal();
     invoiceOverlay.classList.add("active");
 }
 
@@ -1963,34 +2756,68 @@ function sendOrderToWhatsApp(){
         return;
     }
 
+    if(!deliveryArea || !deliveryArea.value){
+        showToast("من فضلك اختر منطقة التوصيل");
+        deliveryArea?.focus();
+        return;
+    }
+
+    if(!deliveryAddress || !deliveryAddress.value.trim()){
+        showToast("من فضلك اكتب العنوان التفصيلي");
+        deliveryAddress?.focus();
+        return;
+    }
+
+    if(!paymentConfirmation || !paymentConfirmation.checked){
+        showToast("يجب تأكيد مراجعة الطلب والتحويل قبل الإرسال");
+        paymentConfirmation?.focus();
+        return;
+    }
+
+    updateDeliveryTotal();
+
     const orderNumber = currentOrderNumber || generateOrderNumber();
     const date = invoiceDate.textContent || formatDateTime();
+    const subtotal = cart.reduce((sum,item) => sum + item.price * item.quantity, 0);
+    const deliveryFee = selectedDeliveryFee || 0;
+    const grandTotal = subtotal + deliveryFee;
+    const area = selectedDeliveryArea || deliveryArea.value;
+    const address = deliveryAddress.value.trim();
 
     let message =
-        `🧾 فاتورة طلب من البشندي\n` +
-        `━━━━━━━━━━━━━━\n` +
+        `🛍️ *طلب جديد من مول البشندي*\n` +
+        `━━━━━━━━━━━━━━━━━━\n` +
         `🔢 رقم الطلب: ${orderNumber}\n` +
         `📅 التاريخ: ${date}\n` +
-        `━━━━━━━━━━━━━━\n\n`;
+        `━━━━━━━━━━━━━━━━━━\n\n` +
+        `📦 *تفاصيل المنتجات:*\n\n`;
 
     cart.forEach((item,index) => {
         const lineTotal = item.price * item.quantity;
 
         message +=
-            `${index + 1}) ${item.name}\n` +
-            `كود الصنف: ${item.id}\n` +
-            `الكمية: ${item.quantity} × ${item.price} جنيه\n` +
-            `الإجمالي: ${lineTotal} جنيه\n\n`;
+            `*${index + 1}) ${item.name}*\n` +
+            `${item.isPackage ? "🎁 النوع: باقة تجهيز عرائس\n" : "🔖 كود الصنف: " + item.id + "\n"}` +
+            `🔢 الكمية: ${item.quantity}\n` +
+            `💵 سعر الوحدة: ${item.price.toLocaleString("ar-EG")} جنيه\n` +
+            `💰 إجمالي الصنف: ${lineTotal.toLocaleString("ar-EG")} جنيه\n\n`;
     });
 
-    const total = cart.reduce(
-        (sum,item) => sum + item.price * item.quantity,
-        0
-    );
-
     message +=
-        `━━━━━━━━━━━━━━\n` +
-        `💰 إجمالي الطلب: ${total} جنيه\n\n` +
+        `━━━━━━━━━━━━━━━━━━\n` +
+        `🧾 *ملخص الفاتورة:*\n` +
+        `💰 إجمالي المنتجات: ${subtotal.toLocaleString("ar-EG")} جنيه\n` +
+        `🚚 منطقة التوصيل: ${area}\n` +
+        `💵 سعر التوصيل: ${deliveryFee.toLocaleString("ar-EG")} جنيه\n` +
+        `📍 العنوان التفصيلي: ${address}\n` +
+        `━━━━━━━━━━━━━━━━━━\n` +
+        `💳 *الإجمالي النهائي شامل التوصيل: ${grandTotal.toLocaleString("ar-EG")} جنيه*\n` +
+        `━━━━━━━━━━━━━━━━━━\n\n` +
+        `💳 *بيانات الدفع:*\n` +
+        `طريقة الدفع: إنستا باي أو محفظة إلكترونية\n` +
+        `📱 رقم التحويل: 01273968740\n` +
+        `👤 الاسم: احمد ع**\*\*\* م\*\*\*** ب\*\*\*\n` +
+        `⚠️ تم التأكيد على تحويل المبلغ كاملًا شامل التوصيل قبل إرسال الطلب.\n\n` +
         `📍 مول البشندي - مدينة موط - الوادي الجديد\n` +
         `🙏 شكرًا لاختياركم البشندي`;
 
